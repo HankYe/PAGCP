@@ -50,7 +50,7 @@ $ python compress.py --model $model name$ --dataset COCO --data coco.yaml --batc
 </details>
 
 
-## <div align="center">Citation</div>
+### Citation
 If you find this work helpful in your research, please cite.
 ````
 @article{Ye22performance,
@@ -61,7 +61,7 @@ If you find this work helpful in your research, please cite.
 }
 ````
 
-## <div align="center">Acknowledgement</div>
+### Acknowledgement
 We greatly acknowledge the authors of _YOLOv5_ and _Torch_pruning_ for their open-source codes. Visit the following links to access more contributions of them.
 * [YOLOv5](https://github.com/ultralytics/yolov5)
 * [Torch_pruning](https://github.com/VainF/Torch-Pruning)
