@@ -1,4 +1,4 @@
-## <div align="center">Introduction</div>
+### Introduction
 
 This is the official implementation of PAGCP for YOLOv5 compression in the paper, [**Performance-aware Approximation of Global Channel Pruning for Multitask CNNs**](https://github.com/HankYe/yolov5prune). PAGCP is a novel pruning paradigm containing a sequentially greedy channel pruning algorithm and a performance-aware oracle criterion, to approximately solve the objective problem of GCP. The developed pruning strategy dynamically computes the filter saliency in a greedy fashion based on the pruned structure at the previous step, and control each layer’s pruning ratio by the constraint of the performance-aware oracle criterion.
 
@@ -50,7 +50,7 @@ $ python compress.py --model $model name$ --dataset COCO --data coco.yaml --batc
 </details>
 
 
-## <div align="center">Citation</div>
+### Citation
 If you find this work helpful in your research, please cite.
 ````
 @article{Ye22performance,
@@ -61,7 +61,7 @@ If you find this work helpful in your research, please cite.
 }
 ````
 
-## <div align="center">Acknowledgement</div>
+### Acknowledgement
 We greatly acknowledge the authors of _YOLOv5_ and _Torch_pruning_ for their open-source codes. Visit the following links to access more contributions of them.
 * [YOLOv5](https://github.com/ultralytics/yolov5)
 * [Torch_pruning](https://github.com/VainF/Torch-Pruning)
