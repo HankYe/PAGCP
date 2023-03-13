@@ -6,6 +6,10 @@ This is the official implementation of PAGCP for YOLOv5 compression in the paper
 Global channel pruning (GCP) aims to remove a subset of channels (filters) across different layers from a deep model without hurting the performance. Previous works focus on either single task model pruning or simply adapting it to multitask scenario, and still face the following problems when handling multitask pruning: 1) Due to the task mismatch, a well-pruned backbone for classification task focuses on preserving filters that can extract category-sensitive information, causing filters that may be useful for other tasks to be pruned during the backbone pruning stage; 2) For multitask predictions, different filters within or between layers are more closely related and interacted than that for single task prediction, making multitask pruning more difficult. 
 Therefore, aiming at multitask model compression, we propose a Performance-Aware Global Channel Pruning (PAGCP) framework. We first theoretically present the objective for achieving superior GCP, by considering the joint saliency of filters from intra- and inter-layers. Then a sequentially greedy pruning strategy is proposed to optimize the objective, where a performance-aware oracle criterion is developed to evaluate sensitivity of filters to each task and preserve the globally most task-related filters. Experiments on several multitask datasets show that the proposed PAGCP can reduce the FLOPs and parameters by over 60\% with minor performance drop, and achieves 1.2x acceleration on both cloud and mobile platforms
 
+&ensp;
+<p align="center">
+  <img src="docs/PAGCP.png" width="100%" height="420">
+</p>
 
 ### Main Results on COCO2017
 
