@@ -64,7 +64,7 @@ If you find this work helpful in your research, please cite.
 ````
 @article{Ye22performance,
   title={Performance-aware Approximation of Global Channel Pruning for Multitask CNNs},
-  author={Hancheng Ye and Bo Zhang and Tao Chen and Jianyuan Fan and Bin Wang},
+  author={Hancheng Ye and Bo Zhang and Tao Chen and Jiayuan Fan and Bin Wang},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
   year={2023}
 }
