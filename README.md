@@ -1,3 +1,10 @@
+[![arXiv](https://img.shields.io/badge/arXiv-2303.06880-b31b1b.svg)](https://arxiv.org/abs/2303.11923)
+[![GitHub issues](https://img.shields.io/github/issues/HankYe/PAGCP)](https://github.com/HankYe/PAGCP/issues)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/PJLab-ADG/3DTrans/pulls)
+
+# T-PAMI-2023: Performance-aware Approximation of Global Channel Pruning for Multitask CNNs
+
+
 ### Introduction
 
 This is the official implementation of PAGCP for YOLOv5 compression in the paper, [**Performance-aware Approximation of Global Channel Pruning for Multitask CNNs**](https://github.com/HankYe/yolov5prune). PAGCP is a novel pruning paradigm containing a sequentially greedy channel pruning algorithm and a performance-aware oracle criterion, to approximately solve the objective problem of GCP. The developed pruning strategy dynamically computes the filter saliency in a greedy fashion based on the pruned structure at the previous step, and control each layer’s pruning ratio by the constraint of the performance-aware oracle criterion.
