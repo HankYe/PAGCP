@@ -7,7 +7,7 @@
 
 ### Introduction
 
-This is the official implementation of PAGCP for YOLOv5 compression in the paper, [**Performance-aware Approximation of Global Channel Pruning for Multitask CNNs**](https://github.com/HankYe/yolov5prune). PAGCP is a novel pruning paradigm containing a sequentially greedy channel pruning algorithm and a performance-aware oracle criterion, to approximately solve the objective problem of GCP. The developed pruning strategy dynamically computes the filter saliency in a greedy fashion based on the pruned structure at the previous step, and control each layer’s pruning ratio by the constraint of the performance-aware oracle criterion.
+This is the official implementation of PAGCP for YOLOv5 compression in the paper, [**Performance-aware Approximation of Global Channel Pruning for Multitask CNNs**](https://arxiv.org/abs/2303.11923). PAGCP is a novel pruning paradigm containing a sequentially greedy channel pruning algorithm and a performance-aware oracle criterion, to approximately solve the objective problem of GCP. The developed pruning strategy dynamically computes the filter saliency in a greedy fashion based on the pruned structure at the previous step, and control each layer’s pruning ratio by the constraint of the performance-aware oracle criterion.
 
 ### Abstract
 Global channel pruning (GCP) aims to remove a subset of channels (filters) across different layers from a deep model without hurting the performance. Previous works focus on either single task model pruning or simply adapting it to multitask scenario, and still face the following problems when handling multitask pruning: 1) Due to the task mismatch, a well-pruned backbone for classification task focuses on preserving filters that can extract category-sensitive information, causing filters that may be useful for other tasks to be pruned during the backbone pruning stage; 2) For multitask predictions, different filters within or between layers are more closely related and interacted than that for single task prediction, making multitask pruning more difficult. 
@@ -46,9 +46,9 @@ Therefore, aiming at multitask model compression, we propose a Performance-Aware
 <!-- $ sudo apt update && apt install -y libgl1-mesa-glx libsm6 libxext6 libxrender-dev -->
 
 ```bash
-$ git clone https://github.com/HankYe/yolov5prune
-$ cd yolov5prune
-$ conda create -n yolov5prune python==3.8 # (>=3.6)
+$ git clone https://github.com/HankYe/PAGCP
+$ cd PAGCP
+$ conda create -n pagcp python==3.8 # (>=3.6)
 $ pip install -r requirements.txt
 ```
 
@@ -57,7 +57,7 @@ $ pip install -r requirements.txt
 <details>
 <summary>Compression</summary>
 
-Repeatedly run the command below to prune models on [COCO](https://github.com/HankYe/yolov5prune/blob/master/data/scripts/get_coco.sh) dataset, in which hyper-parameters can be tuned to get better compression performance.
+Repeatedly run the command below to prune models on [COCO](https://github.com/HankYe/PAGCP/blob/master/data/scripts/get_coco.sh) dataset, in which hyper-parameters can be tuned to get better compression performance.
 
 ```bash
 $ python compress.py --model $model name$ --dataset COCO --data coco.yaml --batch 64 --weights /path/to/to-prune/model --initial_rate 0.06 --initial_thres 6. --topk 0.8 --exp --sequential --device 0
