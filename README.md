@@ -1,6 +1,6 @@
-[![arXiv](https://img.shields.io/badge/arXiv-2303.06880-b31b1b.svg)](https://arxiv.org/abs/2303.11923)
+[![arXiv](https://img.shields.io/badge/arXiv-2303.11923-b31b1b.svg)](https://arxiv.org/abs/2303.11923)
 [![GitHub issues](https://img.shields.io/github/issues/HankYe/PAGCP)](https://github.com/HankYe/PAGCP/issues)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/PJLab-ADG/3DTrans/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/HankYe/PAGCP/pulls)
 
 # T-PAMI-2023: Performance-aware Approximation of Global Channel Pruning for Multitask CNNs
 
