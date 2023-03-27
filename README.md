@@ -20,7 +20,7 @@ Therefore, aiming at multitask model compression, we propose a Performance-Aware
 
 ### Main Results on COCO2017
 
-[assets]: https://github.com/HankYe/yolov5prune/releases
+[assets]: https://github.com/HankYe/PAGCP/releases
 
 |Model |size<br><sup>(pixels) |mAP<sup>val<br>0.5:0.95 |mAP<sup>val<br>0.5  |params<br><sup>(M) |FLOPs<br><sup>640 (B)
 |---                          |---  |---      |---      |---   |---
@@ -42,7 +42,7 @@ Therefore, aiming at multitask model compression, we propose a Performance-Aware
 <details open>
 <summary>Install</summary>
 
-[**Python>=3.6.0**](https://www.python.org/) is required with all [requirements.txt](https://github.com/HankYe/yolov5prune/blob/master/requirements.txt) installed including [**PyTorch>=1.7**](https://pytorch.org/get-started/locally/):
+[**Python>=3.6.0**](https://www.python.org/) is required with all [requirements.txt](https://github.com/HankYe/PAGCP/blob/master/requirements.txt) installed including [**PyTorch>=1.7**](https://pytorch.org/get-started/locally/):
 <!-- $ sudo apt update && apt install -y libgl1-mesa-glx libsm6 libxext6 libxrender-dev -->
 
 ```bash
