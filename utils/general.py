@@ -28,7 +28,7 @@ import torchvision
 import yaml
 
 from utils.downloads import gsutil_getsize
-from utils.metrics import box_iou, fitness
+from utils.metrics import box_iou, fitness_coco, fitness_voc
 
 # Settings
 torch.set_printoptions(linewidth=320, precision=5, profile='long')
@@ -732,7 +732,7 @@ def print_mutation(results, hyp, save_dir, bucket):
     with open(evolve_yaml, 'w') as f:
         data = pd.read_csv(evolve_csv)
         data = data.rename(columns=lambda x: x.strip())  # strip keys
-        i = np.argmax(fitness(data.values[:, :7]))  #
+        i = np.argmax(fitness_coco(data.values[:, :7]))  #
         f.write(f'# YOLOv5 Hyperparameter Evolution Results\n' +
                 f'# Best generation: {i}\n' +
                 f'# Last generation: {len(data)}\n' +
