@@ -60,7 +60,7 @@ $ pip install -r requirements.txt
 Repeatedly run the command below to prune models on [COCO](https://github.com/HankYe/PAGCP/blob/master/data/scripts/get_coco.sh) dataset, in which hyper-parameters can be tuned to get better compression performance.
 
 ```bash
-$ python compress.py --model $model name$ --dataset COCO --data coco.yaml --batch 64 --weights /path/to/to-prune/model --initial_rate 0.06 --initial_thres 6. --topk 0.8 --exp --sequential --device 0
+$ python compress.py --model $model name$ --dataset COCO --data coco.yaml --batch 64 --weights /path/to/to-prune/model --initial_rate 0.06 --initial_thres 6. --topk 0.8 --exp --device 0
 ```
 
 </details>

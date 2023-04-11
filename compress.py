@@ -21,6 +21,7 @@ from torch.cuda import amp
 from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.optim import Adam, SGD, lr_scheduler
 from tqdm import tqdm
+import random
 
 FILE = Path(__file__).resolve()
 ROOT = FILE.parents[0]  # YOLOv5 root directory
@@ -109,8 +110,7 @@ def compress(model, dataloader, args):
         LOGGER.info(f'prune duration: {time.time() - start_time}')
         torch.save(pruned_model, os.path.join(compress_savedir,
                                               f'pruned_{model_name}_{imgsz}_{compression_body}_{dataset_name}_r{round}.pkl'))
-        del sensitivity
-        del sen_dict
+        del sens, sen_dict
         gc.collect()
     return pruned_model
 
@@ -246,7 +246,7 @@ def train(hyp,  # path/to/hyp.yaml or hyp dictionary
             LOGGER.info('Compressing the model...')
 
         with torch_distributed_zero_first(RANK):
-            pruned_model = compress(model, val_loader if RANK in [-1, 0] else None, opt, compress_round, opt.exp)
+            pruned_model = compress(model, val_loader if RANK in [-1, 0] else None, opt)
         pruned_model = pruned_model.to(device)
     else:
         assert os.path.exists(opt.pruned_model)
@@ -508,8 +508,8 @@ def parse_opt(known=False):
     parser.add_argument('--exp', action='store_true', help='whether to compute the sensitivity in a sequential fashion')
     parser.add_argument('--initial_rate', default=0.05, type=float, help='the initial performance drop threshold for the first pruning layer')
     parser.add_argument('--initial_thres', default=5., type=float, help='the global performance drop threshold for the first pruning layer')
-    parser.add_argument('--rate_slope', default=0.005, type=float, help='the adjustment slope of the initial masking ratio at each pruning iteration')
-    parser.add_argument('--thres_slope', default=0.1, type=float, help='the adjustment slope of the initial performance drop threshold at each pruning iteration')
+    parser.add_argument('--rate_slope', default=0., type=float, help='the adjustment slope of the initial masking ratio at each pruning iteration')
+    parser.add_argument('--thres_slope', default=0., type=float, help='the adjustment slope of the initial performance drop threshold at each pruning iteration')
     parser.add_argument('--weights', type=str, default='yolov5s.pt', help='initial weights path')
     parser.add_argument('--pruned-model', type=str, default='', help='the path of the pruned model')
     parser.add_argument('--cfg', type=str, default='', help='model.yaml path')
