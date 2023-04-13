@@ -69,7 +69,7 @@ $ python compress.py --model $model name$ --dataset COCO --data coco.yaml --batc
 
 <summary>Export</summary>
 
-We have tested the effectiveness of ONNX-format exportation. The command is as follows:
+We have tested the effectiveness of ONNX-format conversion. The command is as follows:
 
 ```bash
 $ python export.py --weights $weight_path$ --include onnx --dynamic
