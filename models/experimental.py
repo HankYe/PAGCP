@@ -92,8 +92,11 @@ def attempt_load(weights, map_location=None, inplace=True, fuse=True):
     model = Ensemble()
     for w in weights if isinstance(weights, list) else [weights]:
         ckpt = torch.load(attempt_download(w), map_location=map_location)  # load
-        model.append(ckpt['ema' if ckpt.get('ema') else 'model'].float().eval())  # without layer fuse
-
+        if isinstance(ckpt, dict):
+            model.append(ckpt['ema' if ckpt.get('ema') else 'model'].float().eval())  # without layer fuse
+        else:
+            assert isinstance(ckpt, nn.Module)
+            model.append(ckpt.float().eval())
 
     # Compatibility updates
     for m in model.modules():
