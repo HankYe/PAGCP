@@ -54,7 +54,7 @@ $ pip install -r requirements.txt
 
 </details>
 
-<details>
+<details open>
 <summary>Compression</summary>
 
 Repeatedly run the command below to prune models on [COCO](https://github.com/HankYe/PAGCP/blob/master/data/scripts/get_coco.sh) dataset, in which hyper-parameters can be tuned to get better compression performance.
@@ -65,11 +65,22 @@ $ python compress.py --model $model name$ --dataset COCO --data coco.yaml --batc
 
 </details>
 
+<details open>
+
+<summary>Export</summary>
+
+We have tested the effectiveness of ONNX-format exportation. The command is as follows:
+
+```bash
+$ python export.py --weights $weight_path$ --include onnx --dynamic
+```
+
+</details>
 
 ### Citation
 If you find this work helpful in your research, please cite.
 ````
-@article{Ye22performance,
+@article{ye23pagcp,
   title={Performance-aware Approximation of Global Channel Pruning for Multitask CNNs},
   author={Hancheng Ye and Bo Zhang and Tao Chen and Jiayuan Fan and Bin Wang},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
